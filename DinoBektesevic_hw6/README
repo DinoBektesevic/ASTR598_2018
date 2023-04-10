@@ -1,0 +1,36 @@
+.TH man 8 "16 Nov. 2018" "1.0" "sumrange and reducesum man pages"
+
+.SH NAME
+sumrange n - sum numbers in given ran and output to desired file
+
+reducesum - sum numbers in files selected by given range
+
+.SH SYNOPSIS
+sumrange n m k - sum numbers from n to m (inclusive) and output to file
+    named out.k
+
+reducesum n - sum numbers read from files named out.i for i in range [0, n]
+
+.SH DESCRIPTION
+sumrange sums numbers starting from n, increasing by 1, untill it reaches m
+    at which point the result is outputed to a file named out.k.
+
+reducesum sums numbers from first line of files named out.i, where 
+    i is in range [0, n] (inclusive).
+
+myscript.slurm runs 28 slurm jobs summing over first 28 000 numbers using GNU 
+    parallel.
+
+.SH COMPILING 
+To compile both scripts use:
+    scl enable devtoolset-6 bash
+    g++ -O3 -std=c++17 sumrange.cpp -o sumrange.out
+    g++ -O3 -std=c++17 reducesum.cpp -o reducesum.out
+
+Create a list of commands to run and place them in a file called "myworkfile".
+
+.SH BUGS
+Reducesum will not report non-existance of files within range. 
+
+.SH AUTHOR
+Dino Bektesevic (dinob@uw.edu)

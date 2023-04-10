@@ -1,0 +1,48 @@
+.TH man 8 "16 Nov. 2018" "1.0" "Amdahl's law man page"
+
+.SH SYNOPSIS
+Plot Amdahl's law for varying number of processors and parallelizability 
+and answer the following questions:
+    1) what's the maximal number of processors you would need to use for p?
+    2) What's the meaning of p=1?
+    3) What's Amdahls law when p=1?
+    4) What is the assymptotic behaviour when N-->inf.?
+    
+.SH DESCRIPTION
+1) 
+p    estimated n
+0.5     not more than 60, realistically max 20
+0.6     not more than 80, realistically max 40
+0.7     not more than 100, realistically max 70
+0.8     not more than 120, realistically max 80
+0.9     a lot, realistically will max 140
+0.95    at these parallelizabilities, everything up to IO bottlenecks
+
+2) P marks the parallelizable portion of the program, the portion that
+benefits from parallelization. When p=1 the whole program is paralelizable
+trivially. 
+
+3) When that happens Amdahl's law can be written as: 
+    S(N, p) = N
+
+essentially stating that the speedup will be equal to the number of 
+processors one can dedicate to the problem. 
+
+4) When N-->inf. Amdahl's law can be rewritten as 
+    lim_{N-->inf.} S(N, p) = 1/(1-p)
+
+which is essentially saying that the maximal speedups one can achieve
+depend on the size of the portion of the program that is parallelizable.
+Thus if only half of the program is parallelizable the maximal achieved 
+speedup will be 2x, as the non-parallelizable portion of the program sets
+the minimal execution time. This behaviour is reproduced in the graph, marked
+by a dotted black line.
+
+.SH COMPILING 
+python3, matplotlib
+
+.SH BUGS
+Could possibly work with Python 2, untested.
+
+.SH AUTHOR
+Dino Bektesevic (dinob@uw.edu)

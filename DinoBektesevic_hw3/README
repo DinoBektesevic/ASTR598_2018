@@ -1,0 +1,22 @@
+.TH man 8 "16 Nov. 2018" "1.0" "HW3 Explanation Page"
+
+
+.SH SYNOPSIS
+Time generatelist and findodd and compare it to provided implementation.
+I conclude my implementation is faster.
+
+.SH DESCRIPTION
+Recompile the generatelist and findodd from HW1 and HW2 to include optimizations.
+    scl enable devtoolset-6 bash
+    g++ -std=c++17 -O3 generatelist.cpp -o generatelist
+    g++ -std=c++17 -O3 findodd.cpp -o findodd
+
+Separate the three test instances into 3 folders: six, seven and eight. Each
+foldername is determined as log(N), where N is the number of test datapoints. 
+
+Time execution trice for each of the given cases for both my and given 
+implementation. Plot is produced using Python and matplotlib. I conclude my
+implementation is faster. 
+
+.SH AUTHOR
+Dino Bektesevic (dinob@uw.edu)

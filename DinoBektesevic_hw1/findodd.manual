@@ -1,0 +1,17 @@
+.TH man 8 "16 Nov. 2018" "1.0" "findodd man page"
+.SH NAME
+findodd \- split file data, containing one number per line, into two files data.odd and data.even based on the parity of the number.
+.SH SYNOPSIS
+findodd
+.SH DESCRIPTION
+Homework, splits file data into data.odd and data.even based on parity of numbers read from data
+.SH OPTIONS
+No options. File data must exist.
+.SH COMPILING 
+To compile findodd run 
+    scl enable devtoolset-6 bash
+    g++ -std=c++17 findodd.cpp -o findodd.out
+.SH BUGS
+If data contains input not castable as integer it will fail.
+.SH AUTHOR
+Dino Bektesevic (dinob@uw.edu)

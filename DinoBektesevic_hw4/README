@@ -1,0 +1,23 @@
+.TH man 8 "16 Nov. 2018" "1.0" "Sumall man page."
+
+.SH NAME
+sumall sums first 6000 numbers with checkpointing.
+
+.SH SYNOPSIS
+sumall sums first 6000 numbers with checkpointing.
+
+.SH DESCRIPTION
+sumall sums first 6000 numbers while checkpointing on every
+even number of sums and is capable of resuming its workload 
+after being interupted. 
+
+.SH OPTIONS
+None
+
+.SH COMPILING 
+To compile findodd run 
+    scl enable devtoolset-6 bash
+    g++ -std=c++17 sumall.cpp -o sumall.out
+
+.SH AUTHOR
+Dino Bektesevic (dinob@uw.edu)

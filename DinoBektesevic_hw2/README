@@ -1,0 +1,36 @@
+.TH man 8 "16 Nov. 2018" "1.0" "generate and sort lists man page"
+
+.SH NAME
+generatelist \- generates a single, or a list, of random numbers
+
+sortlist \- sorts a list of integers in ascending order
+
+.SH SYNOPSIS
+generatelist [n] 
+
+sortlist list..
+
+.SH DESCRIPTION
+generatelist returns a single random number, or, if the number
+of randomly generated numbers is provided, returns a list of 
+random numbers. 
+
+sortlist takes a list of random numbers from STDIN and returns 
+a sorts the list in ascending order. 
+
+.SH OPTIONS
+generatelist: [n] \-if provided sets the number of randomly generated
+    numbers.
+
+sortlist: list.. \-the list of numbers that will be sorted, mandatory.
+
+.SH COMPILING 
+To compile findodd run 
+    scl enable devtoolset-6 bash
+    g++ -std=c++17 generatelist.cpp -o generatelist.out
+    g++ -std=c++17 sortlist.cpp -o sortlist.out
+.SH BUGS
+Providing negative numbers, empty lists or heterogeneous lists 
+containing multiple different types will output nothing or raise an error. 
+.SH AUTHOR
+Dino Bektesevic (dinob@uw.edu)
